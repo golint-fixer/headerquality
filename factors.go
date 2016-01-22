@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// Factors - return quality factors from give Request headers
+// Factors - return quality factors from given http.Request headers
 func Factors(factor string, request *http.Request) (output Parameters) {
 	output = make(Parameters, 0)
 	if request == nil || request.Header == nil || factor == "" {

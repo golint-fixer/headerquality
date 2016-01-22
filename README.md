@@ -16,8 +16,8 @@ func homeHandler(rw http.ResponseWriter, req *http.Request) {
 
   if languages := headerquality.Factors("Accept-Language", req); len(languages) > 0 {
     for _, language := range languages {
-      if languages.Factor == "en-US" {
-        // Do something
+      if IsLocaleSupported(language.Factor) {
+        // Set language for usage in views
       }
     }
   }
