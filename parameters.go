@@ -1,11 +1,8 @@
 package headerquality
 
-import (
-	"bytes"
-	"fmt"
-)
+import "fmt"
 
-// A slice of sortable Parameters.
+// Parameters - slice of sortable Parameters.
 type Parameters []Parameter
 
 // Returns the total number of items in the slice. Implemented to satisfy
@@ -20,18 +17,17 @@ func (al Parameters) Swap(i, j int) { al[i], al[j] = al[j], al[i] }
 func (al Parameters) Less(i, j int) bool { return al[i].Quality > al[j].Quality }
 
 // Returns the parsed factors in a human readable fashion.
-func (al Parameters) String() string {
-	output := bytes.NewBufferString("")
+func (al Parameters) String() (output string) {
 	for i, factor := range al {
-		output.WriteString(fmt.Sprintf("%s (%1.1f)", factor.Factor, factor.Quality))
+		output += fmt.Sprintf("%s (%1.1f)", factor.Factor, factor.Quality)
 		if i != len(al)-1 {
-			output.WriteString(", ")
+			output += ", "
 		}
 	}
 
-	if output.Len() == 0 {
-		output.WriteString("[]")
+	if len(output) == 0 {
+		return "[]"
 	}
 
-	return output.String()
+	return output
 }
