@@ -4,6 +4,7 @@ Headers media range relative quality indicator.
 
 [![Build Status](https://travis-ci.org/linkosmos/headerquality.svg?branch=master)](https://travis-ci.org/linkosmos/headerquality)
 [![GoDoc](http://godoc.org/github.com/linkosmos/headerquality?status.svg)](http://godoc.org/github.com/linkosmos/headerquality)
+[![Go Report Card](http://goreportcard.com/badge/linkosmos/headerquality)](http://goreportcard.com/report/linkosmos/headerquality)
 [![BSD License](http://img.shields.io/badge/license-BSD-blue.svg)](http://opensource.org/licenses/BSD-3-Clause)
 
 The values in the slice are sorted descending by qualification (the most qualified parameters will have the lowest indexes in the slice).
